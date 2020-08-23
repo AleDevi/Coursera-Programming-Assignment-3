@@ -1,10 +1,13 @@
+##Second assignment: GEt the best, worst or specific rank hospital in a state given
+##specified cause of death.
+
 outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
 data <- outcome
 data[, 11] <- as.numeric(outcome[, 11])
 data[, 17] <- as.numeric(outcome[, 17])
 data[, 23] <- as.numeric(outcome[, 23])
 
-
+##Function (quite similar to the first) :
 rankhospital <- function(state, outcome, num = "best") {
         if (outcome == "heart attack") {
                 x <- 11
