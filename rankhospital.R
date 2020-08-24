@@ -1,4 +1,4 @@
-##Second assignment: GEt the best, worst or specific rank hospital in a state given
+##Second assignment: Get the best, worst or specific rank hospital in a state given
 ##specified cause of death.
 
 outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
@@ -23,7 +23,7 @@ rankhospital <- function(state, outcome, num = "best") {
         selected<-selected[order(selected[,2]),]
         selected<-selected[order(selected[,x]),]
         selected<-na.omit(selected)
-        y<-num
+                y<-num
         if (num=="best") {
                 y<-1
         }
