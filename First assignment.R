@@ -7,7 +7,6 @@ head(outcome)
 outcome[, 11] <- as.numeric(outcome[, 11])
 hist(outcome[, 11])
 
-
 #returns a character vector
 #with the name of the hospital that has the best (i.e. lowest) 30-day mortality for the specied outcome
 #in that state. The hospital name is the name provided in the Hospital.Name variable. The outcomes can

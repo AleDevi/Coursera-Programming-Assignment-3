@@ -20,7 +20,7 @@ outcome[, 23] <- as.numeric(outcome[, 23])
 hist(outcome[, 11])
 
 ##managing data
-data <- outcome ## I'll use a data.frame called data instread of the one called outcome
+data <- outcome ## I'll use a data.frame called data instead of the one called outcome
 data[, 11] <- as.numeric(outcome[, 11])
 data[, 17] <- as.numeric(outcome[, 17])
 data[, 23] <- as.numeric(outcome[, 23])
@@ -32,15 +32,13 @@ best <- function(state, outcome) {
         } else if (outcome == "heart failure") {
                 x <- 17
         } else if (outcome == "pneumonia") {
-                x <- 23
-                        }else
+                x <- 23}else
                 stop("invalid outcome")
         selected<-subset(data,data$State==state)
         if(length(selected$State)==0){
                 stop(("invalid state"))}
         z<-min(selected[,x],na.rm = TRUE)
         selected<-subset(selected,selected[,x]==z)
-        #selected<-selected[,x]
         selected<-selected[order(selected$Hospital.Name),]
         selected[1,2]
 }
